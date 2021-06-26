@@ -1,6 +1,9 @@
-from setuptools import setup
+from distutils.core import setup
+from setuptools import find_packages
+
 setup(
-    name="smartbots",
+     name="smartbots",
     version='0.0.1',
-    install_requires=['gym', 'pybullet', 'numpy', 'matplotlib']
+    packages=find_packages(),
+    include_package_data=True,
 )
