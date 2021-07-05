@@ -11,10 +11,10 @@ import pybullet_data
 import numpy as np
 import matplotlib.pyplot as plt
 # Local resources
-from smartbots.resources import getResourcePath
-import smartbots.resources._helper_functions as helper
-import smartbots.resources._car as car
-import smartbots.resources._cube as cube
+from smartbots.assets import getResourcePath
+import smartbots.assets._helper_functions as helper
+import smartbots.assets._car as car
+import smartbots.assets._cube as cube
 
 class DrivingEnv(gym.Env):
     '''

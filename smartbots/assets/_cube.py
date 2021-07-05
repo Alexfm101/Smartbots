@@ -3,7 +3,7 @@ Contains basic cube class as URDF wrapper.
 '''
 import pybullet as p
 import numpy as np
-from smartbots.resources import getResourcePath
+from smartbots.assets import getResourcePath
 
 class Cube:
     '''

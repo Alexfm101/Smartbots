@@ -5,11 +5,11 @@ smartbots.egg-info/PKG-INFO
 smartbots.egg-info/SOURCES.txt
 smartbots.egg-info/dependency_links.txt
 smartbots.egg-info/top_level.txt
+smartbots/assets/__init__.py
+smartbots/assets/_car.py
+smartbots/assets/_cube.py
+smartbots/assets/_debug_env.py
+smartbots/assets/_helper_functions.py
+smartbots/assets/_moving_cube.py
 smartbots/controllers/__init__.py
-smartbots/resources/__init__.py
-smartbots/resources/_car.py
-smartbots/resources/_cube.py
-smartbots/resources/_debug_env.py
-smartbots/resources/_helper_functions.py
-smartbots/resources/_moving_cube.py
 smartbots/utils/__init__.py

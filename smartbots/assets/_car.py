@@ -6,8 +6,8 @@ import pybullet as p
 import numpy as np
 import math
 # Local resources
-from smartbots.resources import _helper_functions as helper
-from smartbots.resources import getResourcePath
+from smartbots.assets import _helper_functions as helper
+from smartbots.assets import getResourcePath
 
 class Car:
     '''

@@ -3,8 +3,8 @@ Contains moving cube class as URDF wrapper.
 '''
 import pybullet as p
 import numpy as np
-from smartbots.resources import getResourcePath
-from smartbots.resources._cube import Cube
+from smartbots.assets import getResourcePath
+from smartbots.assets._cube import Cube
 
 class MovingCube(Cube):
     '''

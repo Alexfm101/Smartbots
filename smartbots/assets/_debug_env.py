@@ -3,11 +3,11 @@ Debug environment for testing new objects or functionality with GUI.
 '''
 import numpy as np
 import pybullet as p
-from smartbots.resources import getResourcePath
-import smartbots.resources._helper_functions as helper
-import smartbots.resources._car as car
-from smartbots.resources._moving_cube import MovingCube
-from smartbots.resources._cube import Cube
+from smartbots.assets import getResourcePath
+import smartbots.assets._helper_functions as helper
+import smartbots.assets._car as car
+from smartbots.assets._moving_cube import MovingCube
+from smartbots.assets._cube import Cube
 import time
 
 def main():

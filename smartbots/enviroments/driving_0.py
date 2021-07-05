@@ -8,8 +8,8 @@ import pybullet as p
 import numpy as np
 # Local resources
 from smartbots.enviroments.driving_env import DrivingEnv
-import smartbots.resources._car as car
-from smartbots.resources._cube import Cube
+import smartbots.assets._car as car
+from smartbots.assets._cube import Cube
 
 
 class Driving0(DrivingEnv):
