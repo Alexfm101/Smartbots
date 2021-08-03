@@ -13,3 +13,4 @@ smartbots/assets/_helper_functions.py
 smartbots/assets/_moving_cube.py
 smartbots/controllers/__init__.py
 smartbots/utils/__init__.py
+smartbots/utils/bullet.py
