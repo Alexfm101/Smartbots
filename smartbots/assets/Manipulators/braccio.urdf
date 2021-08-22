@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<robot name="visual">
-
+<robot name="braccio">
   <material name="gray">
     <color rgba="0.3 0.3 0.3 1"/>
   </material>
