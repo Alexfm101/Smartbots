@@ -7,7 +7,11 @@ ENVIROMENTS = (
     },
     {
         'id': 'RobotArm-v0',
-        'entry_point':'smartbots.enviroments.RobotArm_Env:RobotArmEnv'
+        'entry_point':'smartbots.enviroments.RobotArm_env:RobotArmEnv'
+    },
+    {
+        'id':'Braccio-v0',
+        'entry_point':'smartbots.enviroments.braccio_env:BraccioEnv'
     }
 )
 
