@@ -10,7 +10,7 @@ p.setGravity(0,0,-10)
 
 startPos = [0,0,0.3]
 startOrientation = p.getQuaternionFromEuler([0,0,0])
-manipulator = p.loadURDF('./smartbots/assets/Manipulators/braccio.urdf',startPos, startOrientation)
+manipulator = p.loadURDF('./smartbots/assets/Manipulators/braccio.urdf',startPos, startOrientation, useFixedBase=False)
 
 while True:
     p.stepSimulation()
@@ -18,3 +18,6 @@ while True:
 cubePos, cubeOrn = p.getBasePositionAndOrientation(manipulator)
 print(cubePos,cubeOrn)
 p.disconnect()
+
+
+# TODO: add collision to plane
