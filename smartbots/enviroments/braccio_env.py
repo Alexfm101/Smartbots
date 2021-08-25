@@ -16,12 +16,12 @@ class BraccioEnv(gym.Env):
     metadata = {'render.modes':['human']}
 
     def __init__(self):
-        self.reset_joint_indices = RESET_JOINT_VALUES 
+        self.reset_joint_indices = RESET_JOINT_VALUES
         self.reset_joint_values = RESET_JOINT_INDICES
         self.id = 1
-    
+
     def step(self,action):
-        # TODO: 
+        # TODO:
             # crear las acciones
             # obtener la observation
             # dar la recompenza
@@ -51,9 +51,9 @@ class BraccioEnv(gym.Env):
             "braccio_states": robot_states
         }
         return observation
-    
+
     def render(self, mode='human'):
-    
+        pass
+
     def close(self):
         p.disconnect()
-    
