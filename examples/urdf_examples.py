@@ -6,7 +6,7 @@ import os
 physicsClient = p.connect(p.GUI)#or p.DIRECT for non-graphical version
 p.setAdditionalSearchPath(pybullet_data.getDataPath()) #optionally
 planeId = p.loadURDF("plane.urdf")
-# p.setGravity(0,0,-10)
+p.setGravity(0,0,-10)
 
 startPos = [0,0,0.3]
 startOrientation = p.getQuaternionFromEuler([0,0,0])
