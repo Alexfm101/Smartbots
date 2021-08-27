@@ -1,6 +1,13 @@
 import numpy as np
 import pybullet as p
 
+
+def connectSimulation(gui=False):
+    if gui:
+        p.connect(p.GUI)#version grafica
+    else:
+        p.connect(p.DIRECT)#version sin graficos
+
 def connection_setup(timestep=1./240, solver_iterations=150, gravity=10):
     """
         This function defines how you connect with pybullet config.
@@ -22,18 +29,17 @@ def load_urdf(urdf=''):
     """
     p.loadURDF(urdf)
 
-def setup_init(timestep=1./240,k iterations=150, gravity=-9.5):
+def setup_init(timestep=1./240, iterations=150, gravity=-9.5):
     """
         This function give an initial  setup to the reset
     """
     p.setPhysicsEngineParameter(numSolverIterations=iterations)
-    p.setTimeStep(timeStep)
+    p.setTimeStep(timestep)
     p.setGravity(0, 0, gravity)
     p.setRealTimeSimulation(False)
     p.stepSimulation()
 
 def reset_robot(id, reset_joint_indices, reset_joint_values):
-
     """
         This function reset all the states of the joints of the robot
     """
@@ -44,3 +50,15 @@ def reset_robot(id, reset_joint_indices, reset_joint_values):
 
 # control stuff
 # ----------------------------
+
+def jointStates(id,jointIndices):
+    """
+        This function get me all the position and velocities of the joints
+    """
+    jointStates = p.getJointStates(id,jointIndices)
+    jointPositions, jointVelocities = [],[]
+    for state in jointStates:
+        jointPositions.append(state[0])
+        jointVelocities.append(state[1])
+
+    return np.asarray(jointPositions),np.asarray(jointVelocities)
