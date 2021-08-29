@@ -28,7 +28,7 @@ class BraccioEnv(gym.Env):
                         basePosition=[0,0,0],
                         baseOrientation=p.getQuaternionFromEuler([0,0,0])
                         )
-        p.loadURDF("plane.urdf") #TODO:agregar piso
+        # p.loadURDF("plane.urdf") #TODO:agregar piso
         self.indices = list(range(0,p.getNumJoints(self.id)))
 
 
@@ -57,14 +57,8 @@ class BraccioEnv(gym.Env):
             self.reset_joint_values
         )
 
-        # generar la observacion del ambiente
-        braccio_joints_positions, braccio_joints_velocities = bullet.jointStates(self.id, self.indices)
-
-        # observacion del ambiente para el agente
-        observation = {
-            "braccio_joints_positions": braccio_joints_positions,
-            "braccio_joints_velocities": braccio_joints_velocities
-        }
+        # obtener observacion
+        observation = self.getObservation()
 
         return observation
 
@@ -73,3 +67,18 @@ class BraccioEnv(gym.Env):
 
     def close(self):
         p.disconnect()
+
+
+    # usefull functions
+    # ------------------
+
+
+    def getObservation(self):
+        # me devuelve la posicion y velocidad de las articulaciones
+        positions, velocities = bullet.jointStates(self.id, self.indices)
+
+        observation = {
+            "braccio_joints_position": positions,
+            "braccio_joints_velocities": velocities
+        }
+        return observation
