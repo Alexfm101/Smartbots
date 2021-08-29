@@ -31,12 +31,9 @@ class BraccioEnv(gym.Env):
         # p.loadURDF("plane.urdf") #TODO:agregar piso
         self.indices = list(range(0,p.getNumJoints(self.id)))
 
-
-
-
     def step(self,action):
-        # TODO:
-            # crear las acciones
+
+        # crear las acciones
         if action == 0:
             p.setJointMotorControl2(self.id, self.reset_joint_indices[2],controlMode=p.POSITION_CONTROL)
         else:
@@ -49,7 +46,7 @@ class BraccioEnv(gym.Env):
         done = False
         # info
         info = self.getInfo()
-        
+
         return observation, reward, done, info
 
     def reset(self):
