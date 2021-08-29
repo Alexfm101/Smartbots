@@ -31,6 +31,9 @@ class BraccioEnv(gym.Env):
         # p.loadURDF("plane.urdf") #TODO:agregar piso
         self.indices = list(range(0,p.getNumJoints(self.id)))
 
+        # espacion de acciones posibles
+        self.actionSpace = spaces.Discrete(2)
+
     def step(self,action):
 
         # crear las acciones
