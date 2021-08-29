@@ -37,12 +37,19 @@ class BraccioEnv(gym.Env):
     def step(self,action):
         # TODO:
             # crear las acciones
-            # obtener la observation
-            # dar la recompenza
-            # indicar si se logro la tarea o no
-
-
-
+        if action == 0:
+            p.setJointMotorControl2(self.id, self.reset_joint_indices[2],controlMode=p.POSITION_CONTROL)
+        else:
+            p.setJointMotorControl2(self.id,self.reset_joint_indices[4],controlMode=p.POSITION_CONTROL)
+        # obtener la observation
+        observation = self.getObservation()
+        # dar la recompenza
+        reward = self.getReward()
+        # indicar si se logro la tarea o no
+        done = False
+        # info
+        info = self.getInfo()
+        
         return observation, reward, done, info
 
     def reset(self):
@@ -69,7 +76,7 @@ class BraccioEnv(gym.Env):
         p.disconnect()
 
 
-    # usefull functions
+    # enviroments methods
     # ------------------
 
 
@@ -82,3 +89,11 @@ class BraccioEnv(gym.Env):
             "braccio_joints_velocities": velocities
         }
         return observation
+
+    def getReward(self):
+        reward = -1.
+        return reward
+
+    def getInfo(self):
+        info  = {}
+        return info
