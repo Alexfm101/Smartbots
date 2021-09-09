@@ -61,4 +61,4 @@ def jointStates(id,jointIndices):
         jointPositions.append(state[0])
         jointVelocities.append(state[1])
 
-    return np.asarray(jointPositions),np.asarray(jointVelocities)
+    return jointPositions,jointVelocities

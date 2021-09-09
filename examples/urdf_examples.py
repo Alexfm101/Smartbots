@@ -57,15 +57,8 @@ for _ in range(1000):
     time.sleep(1./240.)
 
 cubePos, cubeOrn = p.getBasePositionAndOrientation(braccio)
-print('position')
-print('-----------------')
-print(cubePos,cubeOrn)
 
-print('movable joints')
-print(movable_joints)
-print(joints)
-
-# controlar al robot
+print(p.getBasePositionAndOrientation(braccio))
 
 
 

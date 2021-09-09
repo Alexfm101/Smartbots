@@ -32,15 +32,18 @@ class BraccioEnv(gym.Env):
         self.indices = list(range(0,p.getNumJoints(self.id)))
 
         # espacion de acciones posibles
-        self.actionSpace = spaces.Discrete(2)
+        self.actionSpace = spaces.Discrete(3)
 
     def step(self,action):
 
         # crear las acciones
         if action == 0:
-            p.setJointMotorControl2(self.id, self.reset_joint_indices[2],controlMode=p.POSITION_CONTROL)
-        else:
-            p.setJointMotorControl2(self.id,self.reset_joint_indices[4],controlMode=p.POSITION_CONTROL)
+            p.setJointMotorControl2(self.id, self.reset_joint_indices[6],controlMode=p.POSITION_CONTROL)
+        elif action == 1:
+            p.setJointMotorControl2(self.id,self.reset_joint_indices[6],controlMode=p.POSITION_CONTROL)
+        elif action ==2:
+            p.setJointMotorControl2(self.id,self.reset_joint_indices[6],controlMode=p.POSITION_CONTROL)
+
         # obtener la observation
         observation = self.getObservation()
         # dar la recompenza
@@ -85,8 +88,8 @@ class BraccioEnv(gym.Env):
         positions, velocities = bullet.jointStates(self.id, self.indices)
 
         observation = {
-            "braccio_joints_position": positions,
-            "braccio_joints_velocities": velocities
+            "joints_position": positions,
+            "joints_velocities": velocities
         }
         return observation
 
