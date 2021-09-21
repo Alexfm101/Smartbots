@@ -29,6 +29,7 @@ class BraccioEnv(gym.Env):
                         baseOrientation=p.getQuaternionFromEuler([0,0,0])
                         )
         # p.loadURDF("plane.urdf") #TODO:agregar piso
+        p.loadURDF('./smartbots/assets/cube/cube1.urdf')
         self.indices = list(range(0,p.getNumJoints(self.id)))
 
         # espacion de acciones posibles
